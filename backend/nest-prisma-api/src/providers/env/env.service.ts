@@ -7,6 +7,22 @@ import { ConfigService } from '@nestjs/config';
 export class EnvConfigService {
         constructor(private configService: ConfigService) {}
 
+        get isLocal(): boolean {
+                return this.nodeEnv === 'local';
+        }
+
+        get isDev(): boolean {
+                return this.nodeEnv === 'dev';
+        }
+
+        get isProd(): boolean {
+                return this.nodeEnv === 'prod';
+        }
+
+        get isTest(): boolean {
+                return this.nodeEnv === 'test';
+        }
+
         private get(key: string): string {
                 const value = this.configService.get<string>(key);
 
