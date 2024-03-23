@@ -76,4 +76,16 @@ export class EnvConfigService {
                         jwtExpirationTime: this.getNumber('JWT_EXPIRATION_TIME'),
                 };
         }
+
+        get appConfig() {
+                const host = this.getString('HOST');
+                const port = this.getString('PORT');
+                const url = `${host}:${port}`;
+
+                return {
+                        host,
+                        port,
+                        url,
+                };
+        }
 }
