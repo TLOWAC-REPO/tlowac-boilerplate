@@ -68,4 +68,12 @@ export class EnvConfigService {
         get nodeEnv(): string {
                 return this.getString('NODE_ENV');
         }
+
+        get jwtConfig() {
+                return {
+                        privateKey: this.getString('JWT_PRIVATE_KEY'),
+                        publicKey: this.getString('JWT_PUBLIC_KEY'),
+                        jwtExpirationTime: this.getNumber('JWT_EXPIRATION_TIME'),
+                };
+        }
 }
