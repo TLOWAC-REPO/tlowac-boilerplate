@@ -88,4 +88,11 @@ export class EnvConfigService {
                         url,
                 };
         }
+
+        get dbConfig() {
+                return {
+                        url: this.getString('DATABASE_URL'),
+                        host: this.getString('DATABASE_HOST'),
+                };
+        }
 }
