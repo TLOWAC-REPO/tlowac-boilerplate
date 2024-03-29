@@ -69,7 +69,7 @@ export class EnvConfigService {
                 return this.getString('NODE_ENV');
         }
 
-        get jwtConfig() {
+        get jwt() {
                 return {
                         privateKey: this.getString('JWT_PRIVATE_KEY'),
                         publicKey: this.getString('JWT_PUBLIC_KEY'),
@@ -77,7 +77,7 @@ export class EnvConfigService {
                 };
         }
 
-        get appConfig() {
+        get app() {
                 const host = this.getString('HOST');
                 const port = this.getString('PORT');
                 const url = `${host}:${port}`;
@@ -89,7 +89,7 @@ export class EnvConfigService {
                 };
         }
 
-        get dbConfig() {
+        get db() {
                 return {
                         url: this.getString('DATABASE_URL'),
                         host: this.getString('DATABASE_HOST'),
