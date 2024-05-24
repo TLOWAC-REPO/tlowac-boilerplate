@@ -30,9 +30,9 @@ export class PrismaService
         async onModuleInit() {
                 await this.$connect();
 
-                const isProd = this.configService.isProd;
+                const isLocal = this.configService.isLocal;
 
-                if (!isProd) {
+                if (isLocal) {
                         this.logger.log('DB connection established');
 
                         this.$on('query', async (e) => {
