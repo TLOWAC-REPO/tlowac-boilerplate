@@ -14,10 +14,18 @@ datasource db {
   directUrl = env("DATABASE_SEED_PUSH_MIGRATE_URL")
 }
 
+enum AuthProvider {
+  GITHUB
+  GOOGLE
+  EMAIL
+}
+
 model User {
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @default(now())
-  email     String   @unique
-  password  String
+  id             Int          @id @default(autoincrement())
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @default(now())
+  authProvider   AuthProvider
+  authProviderId String?
+  email          String       @unique
+  password       String
 }
