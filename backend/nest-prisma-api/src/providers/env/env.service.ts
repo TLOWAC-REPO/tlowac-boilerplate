@@ -103,6 +103,11 @@ export class EnvConfigService {
                                 clientSecret: this.getString('GITHUB_CLIENT_SECRET'),
                                 callbackURL: this.getString('GITHUB_CALLBACK_URL'),
                         },
+                        google: {
+                                clientId: this.getString('GOOGLE_CLIENT_ID'),
+                                clientSecret: this.getString('GOOGLE_CLIENT_SECRET'),
+                                callbackURL: this.getString('GOOGLE_CALLBACK_URL'),
+                        },
                 };
         }
 }
