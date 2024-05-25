@@ -95,4 +95,14 @@ export class EnvConfigService {
                         host: this.getString('DATABASE_HOST'),
                 };
         }
+
+        get oauth() {
+                return {
+                        github: {
+                                clientId: this.getString('GITHUB_CLIENT_ID'),
+                                clientSecret: this.getString('GITHUB_CLIENT_SECRET'),
+                                callbackURL: this.getString('GITHUB_CALLBACK_URL'),
+                        },
+                };
+        }
 }

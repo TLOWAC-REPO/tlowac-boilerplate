@@ -14,4 +14,7 @@ export const envValidator = Joi.object({
         DATABASE_NAME: Joi.string(),
         JWT_PRIVATE_KEY: Joi.string().required(),
         JWT_EXPIRATION_TIME: Joi.string().required(),
+        GITHUB_CLIENT_ID: Joi.string().required(),
+        GITHUB_CLIENT_SECRET: Joi.string().required(),
+        GITHUB_CALLBACK_URL: Joi.string().required(),
 });
